@@ -54,7 +54,7 @@
                                     <div class="clearfix image-list xs-no-js as-util-relatedlink relatedlink" data-relatedlink="6|Powerbeats3 Wireless Earphones - Neighborhood Collection - Brick Red|MPXP2">
                                         <div class="as-tilegallery-element as-image-selected">
                                             <div class=""></div>
-                                            <img src="./assets/003.jpg" class="ir ir item-image as-producttile-image" alt="" width="445" height="445" style="content:-webkit-image-set(url({{ img }}) 2x);">
+                                            <img src="./assets/" class="ir ir item-image as-producttile-image" alt="" width="445" height="445" style="content:-webkit-image-set(url({{ img }}) 2x);">
                                         </div>
                                         
                                     </div>
@@ -84,7 +84,14 @@
                                     {{ unit }}
                                 </h3>
                             </div>
-                            <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>
+                            <div>
+                                <form action="/buy" method="POST">
+                                    <input type="hidden" name="title" value="{{ title }}">
+                                    <input type="hidden" name="price" value={{ price }}>
+                                    <input type="hidden" name="img" value="{{ img }}">
+                                    <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -92,4 +99,7 @@
         </div>
     </div>
 </div>
+
+{{!-- <script src="https://www.mercadopago.com/v2/security.js" view="item"></script> --}}
+
    
